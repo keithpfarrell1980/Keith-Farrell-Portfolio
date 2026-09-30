@@ -133,7 +133,8 @@ button { cursor: pointer; }
 .aside-row span:last-child { color: hsl(var(--muted-foreground)); text-align: right; }
 
 .work-section { background: hsl(var(--foreground)); color: hsl(var(--background)); }
-.work-section .section-lede, .work-section .section-title em { color: hsl(43 18% 65%); }
+.work-section .section-lede, .work-section .section-title em, .work-section .section-header .eyebrow { color: hsl(43 18% 65%); }
+.work-section .section-header .eyebrow-line { background: currentColor; }
 .work-list { border-top: 1px solid hsl(43 15% 35%); }
 .work-item { display: grid; grid-template-columns: 80px 1fr 1.2fr 120px; gap: 24px; align-items: center; padding: 28px 0; border-bottom: 1px solid hsl(43 15% 35%); transition: padding .25s ease, background .25s ease; }
 .work-item:hover { padding-left: 14px; padding-right: 14px; background: hsl(43 15% 19%); }
