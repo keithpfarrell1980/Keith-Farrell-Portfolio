@@ -107,16 +107,24 @@ button { cursor: pointer; }
 .portrait-caption { position: absolute; bottom: 20px; left: 28px; color: hsl(var(--background)); }
 .portrait-stamp { position: absolute; right: -28px; top: 36px; width: 86px; height: 86px; border: 1px solid hsl(var(--foreground)); border-radius: 50%; background: hsl(var(--accent)); display: grid; place-items: center; text-align: center; font-size: .58rem; font-weight: 800; line-height: 1.15; transform: rotate(12deg); }
 
-.ticker { background: hsl(var(--foreground)); color: hsl(var(--background)); padding: 16px 0; overflow: hidden; white-space: nowrap; }
-.ticker-track { display: inline-flex; align-items: center; gap: 34px; animation: crawl 26s linear infinite; }
-.ticker .accent { color: hsl(var(--accent)); }
-@keyframes crawl { to { transform: translateX(-30%); } }
-
 .section { padding: 122px 0; }
-.section-header { display: flex; justify-content: space-between; align-items: end; gap: 30px; margin-bottom: 58px; }
+.section-header {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(270px, 375px);
+  grid-template-areas:
+    "eyebrow eyebrow"
+    "title lede";
+  align-items: end;
+  column-gap: 36px;
+  row-gap: 18px;
+  margin-bottom: 58px;
+}
+.section-header .eyebrow { grid-area: eyebrow; width: 100%; margin: 0; }
+.section-header .eyebrow-line { width: auto; flex: 1; }
+.section-header .section-title { grid-area: title; min-width: 0; }
 .section-title { font-size: clamp(2.8rem, 6vw, 5.7rem); line-height: .92; margin: 0; font-weight: 600; }
 .section-title em { color: hsl(var(--muted-foreground)); font-style: normal; }
-.section-lede { max-width: 375px; color: hsl(var(--muted-foreground)); line-height: 1.7; font-size: .93rem; }
+.section-lede { grid-area: lede; max-width: none; margin: 0 0 .25rem; color: hsl(var(--muted-foreground)); line-height: 1.7; font-size: .93rem; }
 .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 100px; align-items: start; }
 .about-copy { font-size: clamp(1.35rem, 2.5vw, 2rem); line-height: 1.35; max-width: 560px; letter-spacing: -.035em; }
 .about-copy strong { color: hsl(var(--foreground)); }
@@ -179,7 +187,10 @@ button { cursor: pointer; }
   .hero { display: flex; flex-direction: column; align-items: stretch; gap: 54px; padding: 60px 0 80px; min-height: 0; }
   .hero h1 { font-size: clamp(4.05rem, 18vw, 6rem); }
   .hero-portrait-wrap { align-self: center; width: min(84%, 360px); margin-right: 12px; }
-  .section { padding: 82px 0; } .section-header { display: block; margin-bottom: 40px; } .section-lede { margin-top: 24px; }
+  .section { padding: 82px 0; }
+  .section-header { grid-template-columns: minmax(0, 1fr); grid-template-areas: "eyebrow" "title" "lede"; row-gap: 0; margin-bottom: 40px; }
+  .section-header .eyebrow { margin-bottom: 20px; }
+  .section-lede { margin-top: 24px; }
   .about-grid, .principles-grid, .contact-wrap { grid-template-columns: 1fr; gap: 45px; }
   .about-copy { font-size: 1.45rem; } .work-item { grid-template-columns: 42px 1fr; gap: 10px 15px; } .work-detail { grid-column: 2; } .work-tags { grid-column: 2; justify-content: start; }
   .cap-grid { grid-template-columns: 1fr; } .cap-card:nth-child(4) { grid-column: auto; } .cap-card { min-height: 210px; } .cap-index { margin-bottom: 38px; }

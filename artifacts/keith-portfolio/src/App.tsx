@@ -66,11 +66,13 @@ function Home() {
         </section>
       </div>
 
-       <div className="ticker" aria-hidden="true"><div className="ticker-track mono">UNDERSTAND THE PROBLEM <span className="accent">/</span> MAKE IT CLEAR <span className="accent">/</span> DELIVER WITH CONFIDENCE <span className="accent">/</span> UNDERSTAND THE PROBLEM <span className="accent">/</span> MAKE IT CLEAR <span className="accent">/</span> DELIVER WITH CONFIDENCE</div></div>
-
       <section className="section" id="about" data-testid="section-about">
         <div className="container-wide">
-            <div className="section-header"><div><div className="eyebrow mono"><span className="eyebrow-line" /> 01 / About</div><h2 className="section-title display">The person<br /><em>behind the solution.</em></h2></div><p className="section-lede">I bring technical fluency and client-facing clarity to the full product lifecycle — from pre-sales architecture and resource estimation to blueprinting, development, and post-launch support.</p></div>
+          <div className="section-header">
+            <div className="eyebrow mono">01 / About <span className="eyebrow-line" /></div>
+            <h2 className="section-title display">The person<br /><em>behind the solution.</em></h2>
+            <p className="section-lede">I bring technical fluency and client-facing clarity to the full product lifecycle — from pre-sales architecture and resource estimation to blueprinting, development, and post-launch support.</p>
+          </div>
           <div className="about-grid">
              <p className="about-copy" data-testid="text-about-copy">I’m a technical lead and solution architect who helps enterprise teams move from a business need to a workable solution. I’m at my best where customer conversations, product thinking, and delivery realities meet — and where a clear technical point of view can move a decision forward.</p>
             <div className="about-aside" data-testid="display-about-details">
@@ -85,7 +87,11 @@ function Home() {
 
       <section className="section work-section" id="work" data-testid="section-work">
         <div className="container-wide">
-            <div className="section-header"><div><div className="eyebrow mono"><span className="eyebrow-line" /> 02 / Experience in practice</div><h2 className="section-title display">Proof of<br /><em>how I work.</em></h2></div><p className="section-lede">A selection of guided walkthroughs that show how I shape a solution, communicate value, and make technical ideas easier for customers and teams to understand.</p></div>
+          <div className="section-header">
+            <div className="eyebrow mono">02 / Experience in practice <span className="eyebrow-line" /></div>
+            <h2 className="section-title display">Proof of<br /><em>how I work.</em></h2>
+            <p className="section-lede">A selection of guided walkthroughs that show how I shape a solution, communicate value, and make technical ideas easier for customers and teams to understand.</p>
+          </div>
           <div className="work-list" data-testid="list-selected-work">
              {work.map((item) => <a className="work-item" key={item.num} href={item.href} target="_blank" rel="noreferrer" aria-label={`Open ${item.name} walkthrough`} data-testid={`card-work-${item.num}`}><span className="work-num mono">{item.num}</span><h3 className="work-name">{item.name}<ArrowUpRight size={18} strokeWidth={1.8} /></h3><p className="work-detail">{item.detail}</p><div className="work-tags">{item.tags.map((tag) => <span className="tag mono" key={tag}>{tag}</span>)}</div></a>)}
           </div>
@@ -94,14 +100,22 @@ function Home() {
 
       <section className="section" id="capabilities" data-testid="section-capabilities">
         <div className="container-wide">
-           <div className="section-header"><div><div className="eyebrow mono"><span className="eyebrow-line" /> 03 / Strengths</div><h2 className="section-title display">The bridge<br /><em>between need and build.</em></h2></div><p className="section-lede">I work across customers, commercial teams, product, and engineering — translating between perspectives so good solutions can move forward.</p></div>
+          <div className="section-header">
+            <div className="eyebrow mono">03 / Strengths <span className="eyebrow-line" /></div>
+            <h2 className="section-title display">The bridge<br /><em>between need and build.</em></h2>
+            <p className="section-lede">I work across customers, commercial teams, product, and engineering — translating between perspectives so good solutions can move forward.</p>
+          </div>
           <div className="cap-grid" data-testid="grid-capabilities">{capabilities.map(([index, title, body]) => <article className="cap-card" key={index} data-testid={`card-capability-${index}`}><div className="cap-index mono">{index}</div><h3>{title}</h3><p>{body}</p></article>)}</div>
         </div>
       </section>
 
       <section className="section principles" data-testid="section-principles">
         <div className="container-wide">
-           <div className="section-header"><div><div className="eyebrow mono"><span className="eyebrow-line" /> 04 / Working principles</div><h2 className="section-title display">How I bring<br /><em>teams forward.</em></h2></div><p className="section-lede">No theatre. No cargo-cult process. Just good questions, tight loops, and a healthy respect for the customer and the outcome.</p></div>
+          <div className="section-header">
+            <div className="eyebrow mono">04 / Working principles <span className="eyebrow-line" /></div>
+            <h2 className="section-title display">How I bring<br /><em>teams forward.</em></h2>
+            <p className="section-lede">No theatre. No cargo-cult process. Just good questions, tight loops, and a healthy respect for the customer and the outcome.</p>
+          </div>
           <div className="principles-grid">{[['01', 'Start with the why', 'Before a component, a layout, or a line of code: understand what it needs to change for someone.'], ['02', 'Make the invisible visible', 'Prototypes, clear language, and small working increments beat grand plans every time.'], ['03', 'Sweat the useful details', 'Accessibility, performance, responsive behavior — polish is not decoration, it is respect.'], ['04', 'Leave things better', 'A good build should be easier to understand, extend, and hand over than it was before.']].map(([n, title, body]) => <article className="principle" key={n}><span className="mono">{n}</span><div><h3>{title}</h3><p>{body}</p></div></article>)}</div>
         </div>
       </section>
