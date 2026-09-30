@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "Keith Farrell Portfolio"
+description = "A personal developer portfolio for Keith Farrell, showcasing selected work, technical strengths, and a clear way to start a conversation."
+version = "1.0.0"
+id = "artifacts/keith-portfolio"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 18221
+
+[services.development]
+run = "pnpm --filter @workspace/keith-portfolio run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/keith-portfolio", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/keith-portfolio/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "18221"
+BASE_PATH = "/"

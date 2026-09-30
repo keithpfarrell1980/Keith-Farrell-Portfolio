@@ -1,0 +1,1 @@
+- [Portfolio positioning](portfolio-positioning.md) — present Keith for presales engineering and technical leadership roles, not freelance project work.
