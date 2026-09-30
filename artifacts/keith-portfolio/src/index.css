@@ -162,6 +162,8 @@ button { cursor: pointer; }
 .principle p { margin: 0; line-height: 1.55; max-width: 430px; font-size: .86rem; }
 
 .contact-section { padding: 150px 0 122px; }
+.contact-eyebrow { width: 100%; margin-bottom: 30px; }
+.contact-eyebrow .eyebrow-line { width: auto; flex: 1; }
 .contact-wrap { display: grid; grid-template-columns: 1fr .7fr; gap: 90px; align-items: end; }
 .contact-title { font-size: clamp(3.4rem, 8vw, 8rem); line-height: .84; margin: 0; max-width: 800px; }
 .contact-title span { color: hsl(var(--muted-foreground)); }
